@@ -1,0 +1,11 @@
+#!name=叮咚买菜
+#!desc=叮咚买菜每日自动签到&养鱼
+#!system=ios
+
+[Script]
+[Script]
+http-request ^https:\/\/www\.flyert\.com\/source\/plugin\/mobile\/mobile\.php\?module=getdata&.* script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/flyertea/flyertea.cookie.js
+cron "10 0 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/flyertea/flyertea.js
+
+[MITM] 
+hostname = %APPEND% www.flyert.com
