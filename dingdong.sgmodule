@@ -5,10 +5,16 @@
 [Script]
 叮咚买菜_每日签到 = type=cron,cronexp=10 0 * * *,timeout=30,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/dingdong/dingdong_checkin.js
 #叮咚买菜_获取cookie = type=http-request,pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/point\/home\?api_version,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/dingdong/dingdong_checkin.js
-叮咚农场养鱼=type=cron,cronexp="1 8,12,17 * * *",script-path=https://raw.githubusercontent.com/yxjxx/Script/master/dingdong/index.js,wake-system=true,timeout=600
+叮咚农场养鱼=type=cron,cronexp="1 8,12,17 * * *",script-path=https://raw.githubusercontent.com/iepngs/Script/master/dingdong/index.js,wake-system=true,timeout=600
 
 # 获取Cookie
 http-request ^https:\/\/maicai\.api\.ddxq\.mobi\/user\/checkLogin script-path=https://raw.githubusercontent.com/iepngs/Script/master/dingdong/index.js,tag=叮咚农场
 
+# 叮咚果园
+cron "1 8,11,17 * * *" script-path=https://raw.githubusercontent.com/iepngs/Script/master/dingdong/ddgy.js,tag=叮咚果园
+
+# 获取Cookie
+http-request ^https:\/\/farm\.api\.ddxq\.mobi\/api\/v2\/props\/feed script-path=https://raw.githubusercontent.com/iepngs/Script/master/dingdong/ddgy.js,tag=叮咚果园
+
 [MITM] 
-hostname = %APPEND% maicai.api.ddxq.mobi
+hostname = %APPEND% maicai.api.ddxq.mobi, farm.api.ddxq.mobi
