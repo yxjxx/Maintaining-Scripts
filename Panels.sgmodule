@@ -9,7 +9,7 @@ SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,update-interval=1
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
 #网络详情
-NET_info = script-name=NET_info,update-interval=1
+#NET_info = script-name=NET_info,update-interval=1
 
 covid19 = script-name=covid19, title="新冠疫情查询", content="请刷新", update-interval=86400
 
@@ -22,8 +22,7 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 
 #網路詳情 标题显示为根节点名
 #应当修改的字段 group 代理策略组名称
-NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/net_info.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=Fast
+#NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/net_info.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=Fast
 
-[Script]
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/covid19.js
 
