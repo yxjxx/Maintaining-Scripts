@@ -4,7 +4,7 @@ if (!read){
   $done({
    title: "剩余流量查询",
    style: "error",
-   content: "请在完善 darkssl_token 信息\n$persistentStore.write('your_cookie', 'darkssl_token') "
+   content: "请完善 darkssl_token 信息\n$persistentStore.write('your_cookie', 'darkssl_token') "
   })
 };
 function nowtime(){
@@ -63,7 +63,7 @@ $httpClient.get({
     $done({
       title: "流量查询: 已用 / 全部 "+ "   "+nowtime(),
       content: reset +"天后重置" + humanize_byte(used, false) + " / " + humanize_byte(total, true),
-      icon: externaldrive.connected.to.line.below,
+      icon: 'externaldrive.connected.to.line.below',
 		  'icon-color':'#9a7ff7'
     });
   }  
