@@ -62,7 +62,7 @@ $httpClient.get({
   } else {
     $done({
       title: "流量查询: 已用 / 全部 "+ "   "+nowtime(),
-      content: reset +"天后重置" + humanize_byte(used, false) + " / " + humanize_byte(total, true),
+      content: reset +"天后重置 " + humanize_byte(used, false) + " / " + humanize_byte(total, true),
       icon: 'externaldrive.connected.to.line.below',
 		  'icon-color':'#9a7ff7'
     });
