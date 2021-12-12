@@ -29,4 +29,4 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/covid19.js
 
-whitessl = type=http-request, script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/whitessl.js
+whitessl = type=http-request, pattern=^https://api.darkssl.com script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/whitessl.js
