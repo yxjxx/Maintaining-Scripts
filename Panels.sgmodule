@@ -13,6 +13,9 @@ TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
 covid19 = script-name=covid19, title="新冠疫情查询", content="请刷新", update-interval=86400
 
+darkssl = script-name=darkssl, title="剩余流量查询", content="请刷新", update-interval=86400
+
+
 [Script]
 #附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
 SurgePro_ReloadProfile = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/surgepro_reloadprofile.js ,argument=icon=crown.fill&color=#f6c970
@@ -25,4 +28,6 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 #NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/net_info.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=Fast
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/covid19.js
+
+darkssl = type=generic, script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/darkssl.js
 
