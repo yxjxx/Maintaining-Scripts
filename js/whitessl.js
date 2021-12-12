@@ -31,13 +31,24 @@ function humanize_byte(num) {
   // to GiB
   if (num > 1000) {
     num = num / 1000
-    return num.toFixed(1) + 'G'
+    return num.toFixed(2) + 'G'
   } else {
-    return num.toFixed(1) + 'M'
+    return num.toFixed(2) + 'M'
   }
 }
 
-$httpClient.get(dict, function(error, response, data){
+$httpClient.get({
+  url : url,
+  headers: {
+    'Content-Type': "application/json",
+    'Accept': '*/*',
+    'User-Agent': 'Crown/292 CFNetwork/1327.0.4 Darwin/21.2.0',
+    'Accept-Language': 'zh-cn',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Cookie': read
+  }
+}, function(error, response, data){  
   let res = JSON.parse(data)
   let total = res['transfer_enable']
   let used = res['transfer_used']
