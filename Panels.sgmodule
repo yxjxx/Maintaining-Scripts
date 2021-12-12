@@ -29,5 +29,4 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/covid19.js
 
-whitessl = type=generic, script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/whitessl.js, argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7
-
+whitessl = type=generic, script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/whitessl.js
