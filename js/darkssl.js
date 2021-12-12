@@ -4,7 +4,7 @@ if (!read){
   $done({
    title: "剩余流量查询",
    style: "error",
-   content: "请在boxjs中完善 darkssl_token 信息"
+   content: "请在完善 darkssl_token 信息\n$persistentStore.write('your_cookie', 'darkssl_token') "
   })
 };
 function nowtime(){
@@ -24,12 +24,32 @@ var dict = {
     'Cookie': read
   }
 }
-$httpClient.get(url, function(error, response, data){
-  let res = data;
-  let display = res
-  $done({
-    title: "流量查询:已用 / 全部 "+ "   "+nowtime(),
-    icon : "staroflife",
-    content: res['username']
-  });
+
+function humanize_byte(num) {
+  // to MiB
+  num = Number(num) / 1000 / 1000
+  // to GiB
+  if (num > 1000) {
+    num = num / 1000
+    return num.toFixed(1) + 'G'
+  } else {
+    return num.toFixed(1) + 'M'
+  }
+}
+
+$httpClient.get(dict, function(error, response, data){
+  let res = JSON.parse(data)
+  let total = res['transfer_enable']
+  let used = res['transfer_used']
+  if (!total || !used) {
+    $done({
+      style: "error",
+      title: res['status'] + res['msg'] + "   " +nowtime(),
+    });
+  } else {
+    $done({
+      title: "流量查询: 已用 / 全部 "+ "   "+nowtime(),
+      content: humanize_byte(used) + " / " + humanize_byte(total)
+    });
+  }  
 });
