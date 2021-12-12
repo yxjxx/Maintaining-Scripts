@@ -13,7 +13,7 @@ TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
 covid19 = script-name=covid19, title="新冠疫情查询", content="请刷新", update-interval=86400
 
-whitessl = script-name=whitessl, title="剩余流量查询", content="请刷新", update-interval=1
+blackssl = script-name=blackssl, title="剩余流量查询", content="请刷新", update-interval=1
 
 
 [Script]
@@ -29,4 +29,4 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 
 covid19 = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/covid19.js
 
-whitessl = type=generic, script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/whitessl.js
+blackssl = type=generic, script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/blackssl.js
