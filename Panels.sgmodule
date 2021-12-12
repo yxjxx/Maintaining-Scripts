@@ -13,7 +13,7 @@ TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
 covid19 = script-name=covid19, title="新冠疫情查询", content="请刷新", update-interval=86400
 
-darkssl = script-name=darkssl, title="剩余流量查询", content="请刷新", update-interval=86400
+darkssl = script-name=darkssl, title="剩余流量查询", content="请刷新", update-interval=600
 
 
 [Script]
