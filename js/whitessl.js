@@ -49,8 +49,7 @@ $httpClient.get(dict, function(error, response, data){
   } else {
     $done({
       title: "流量查询: 已用 / 全部 "+ "   "+nowtime(),
-      content: humanize_byte(used) + " / " + humanize_byte(total),
-      icon:externaldrive.connected.to.line.below
+      content: humanize_byte(used) + " / " + humanize_byte(total)
     });
   }  
 });
