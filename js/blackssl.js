@@ -54,6 +54,8 @@ $httpClient.get({
   let total = res['transfer_enable']
   let used = res['transfer_used']
   let reset = res['days_to_reset']
+  let date = new Date(res['expired_at'])
+  let expired_at = "到期: " + date.getFullYear + "/" + date.getMonth + "/" + date.getDay
   if (!total || !used) {
     $done({
       style: "error",
@@ -61,10 +63,11 @@ $httpClient.get({
     });
   } else {
     $done({
-      title: "流量查询: 已用 / 全部 "+ "   "+nowtime(),
-      content: reset +"天后重置 " + humanize_byte(used, false) + " / " + humanize_byte(total, true),
+      title: "用量: "+ humanize_byte(used, false) + " | " + humanize_byte(total, true) + "   "+nowtime(),
+      content: "重置: 剩余 " + reset + " 天 \n" + expired_at,
       icon: 'externaldrive.connected.to.line.below',
 		  'icon-color':'#9a7ff7'
     });
+    
   }  
 });
