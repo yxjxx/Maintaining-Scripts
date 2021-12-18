@@ -3,12 +3,9 @@
 #!system=ios
 
 [Script]
-# captureMode = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/captureMode.js
+# module 参数可以自定义抓包模式使用的模块，缺省时使用 MitM All Hostnames 模块
 # use "module", "title", "icon", "color1", "color2", "color3" or "showHostname" in "argument":
-captureMode = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/captureMode.js,argument=title=CaptureMode&module=mitm-all&icon=tray.and.arrow.down&color1=#008080&color2=#efc56f&color3=#994714&showHostname=false
+captureMode = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/captureMode.js,argument=title=CaptureMode&icon=tray.and.arrow.down&color1=#008080&color2=#efc56f&color3=#994714&showHostname=false
 
 [Panel]
 captureMode = script-name=captureMode,update-interval=43200
-
-#[MITM]
-#hostname = -*.apple.com, -*.icloud.com, -*.mzstatic.com, -*.crashlytics.com, -*.facebook.com, -*.instagram.com, *:0
