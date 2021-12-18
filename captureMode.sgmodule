@@ -1,0 +1,7 @@
+[Script]
+# captureMode = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/captureMode.js
+# use "module", "title", "icon", "color1", "color2", "color3" or "showHostname" in "argument":
+captureMode = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/captureMode.js,argument=title=CaptureMode&module=capturemode&icon=tray.and.arrow.down&color1=#008080&color2=#efc56f&color3=#994714&showHostname=false
+
+[Panel]
+captureMode = script-name=captureMode,update-interval=43200
