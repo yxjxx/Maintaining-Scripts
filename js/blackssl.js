@@ -54,8 +54,9 @@ $httpClient.get({
   let total = res['transfer_enable']
   let used = res['transfer_used']
   let reset = res['days_to_reset']
-  let date = new Date(res['expired_at'])
-  let expired_at = "到期: " + date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay()
+  let date = new Date(res['expired_at'] * 1000)
+  let month = date.getMonth() + 1
+  let expired_at = "到期: " + date.getFullYear() + "/" + month + "/" + date.getDate()
   if (!total || !used) {
     $done({
       style: "error",
