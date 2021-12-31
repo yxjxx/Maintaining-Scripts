@@ -1,0 +1,5 @@
+#!name= Box.js Switcher
+#!desc= box.js 切换会话 
+
+[Script]
+cron “0 12 * * *” script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/switcher/box.switcher.js, tag=切换会话
