@@ -6,7 +6,7 @@
 SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,update-interval=1
 
 #流量统计
-TrafficStatistics = script-name=TrafficStatistics,update-interval=1
+#TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
 #网络详情
 #NET_info = script-name=NET_info,update-interval=1
