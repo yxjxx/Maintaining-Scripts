@@ -1,0 +1,8 @@
+#!name=DisneyPlus 
+#!desc=DisneyPlus Check
+
+[Panel]
+disney_check = script-name=disney_check,title=Disney+ 解锁检测,style=alert,content=请刷新面板,update-interval=1800
+
+[Script]
+disney_check = type=generic,script-path=https://gist.githubusercontent.com/Hyseen/729fc4c3ac28c3f2e7c4a832d81780f3/raw/disney_check.js
