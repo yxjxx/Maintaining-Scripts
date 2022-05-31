@@ -57,7 +57,7 @@ $httpClient.get({
   let date = new Date(res['expired_at'] * 1000)
   let month = date.getMonth() + 1
   let expired_at = "到期: " + date.getFullYear() + "/" + month + "/" + date.getDate()
-  if (!total || !used) {
+  if (!total) {
     $done({
       style: "error",
       title: res['status'] + res['msg'] + "   " +nowtime(),
