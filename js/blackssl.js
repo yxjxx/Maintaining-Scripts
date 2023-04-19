@@ -53,10 +53,14 @@ $httpClient.get({
   let res = JSON.parse(data)
   let total = res['transfer_enable']
   let used = res['transfer_used']
+  let remain = Number(total) - Number(used)
   let reset = res['days_to_reset']
+  let days_to_reset = Number(reset) ? Number(reset) : 1
+  let remain_per_day = remain / days_to_reset
   let date = new Date(res['expired_at'] * 1000)
   let month = date.getMonth() + 1
   let expired_at = "到期: " + date.getFullYear() + "/" + month + "/" + date.getDate()
+  let remain_str = "剩余: " + humanize_byte(remain, false) + " | " + humanize_byte(remain_per_day, false) + " /天"
   if (!total) {
     $done({
       style: "error",
@@ -65,7 +69,7 @@ $httpClient.get({
   } else {
     $done({
       title: "用量: "+ humanize_byte(used, false) + " | " + humanize_byte(total, true) + "   "+nowtime(),
-      content: "重置: 剩余 " + reset + " 天 \n" + expired_at,
+      content: remain_str + "\n" + "重置: " + reset + " 天后" ,
       icon: 'externaldrive.connected.to.line.below',
 		  'icon-color':'#9a7ff7'
     });
