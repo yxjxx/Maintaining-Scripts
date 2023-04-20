@@ -58,11 +58,11 @@ $httpClient.get({
   let used = res['transfer_used']
   let reset = res['days_to_reset']
   let days_to_reset = Number(reset) ? Number(reset) : 1
+  let remain = Number(total) - Number(used)
   let remain_per_day = remain / days_to_reset
   let date = new Date(res['expired_at'] * 1000)
   let month = date.getMonth() + 1
-  let expired_at = "到期: " + date.getFullYear() + "/" + month + "/" + date.getDate()
-  let remain = Number(total) - Number(used)
+  let expired_at = "到期: " + date.getFullYear() + "/" + month + "/" + date.getDate()  
   let remain_str = "剩余: " + humanize_byte(remain, 2) + " | " + humanize_byte(remain_per_day, 1) + ' 每天'
   if (!total) {
     $done({
