@@ -7,11 +7,15 @@ if (!read){
    content: "请完善 darkssl_token 信息\n$persistentStore.write('your_cookie', 'darkssl_token') "
   })
 };
-function nowtime(){
- let now = new Date();
- let time = now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
- return time
+function nowtime() {
+  let now = new Date();
+  let hour = now.getHours().toString().padStart(2, '0');
+  let minute = now.getMinutes().toString().padStart(2, '0');
+  let second = now.getSeconds().toString().padStart(2, '0');
+  let time = hour + ":" + minute + ":" + second;
+  return time;
 }
+
 var dict = {
   "url": url,
   headers: {
@@ -25,8 +29,7 @@ var dict = {
   }
 }
 
-function humanize_byte(num, isTotal) {
-  let decimal = isTotal ? 0 : 2
+function humanize_byte(num, decimal) {  
   // to MiB
   num = Number(num) / 1000 / 1000
   // to GiB
@@ -53,14 +56,12 @@ $httpClient.get({
   let res = JSON.parse(data)
   let total = res['transfer_enable']
   let used = res['transfer_used']
-  let remain = Number(total) - Number(used)
   let reset = res['days_to_reset']
-  let days_to_reset = Number(reset) ? Number(reset) : 1
-  let remain_per_day = remain / days_to_reset
   let date = new Date(res['expired_at'] * 1000)
   let month = date.getMonth() + 1
   let expired_at = "到期: " + date.getFullYear() + "/" + month + "/" + date.getDate()
-  let remain_str = "剩余: " + humanize_byte(remain, false) + " | " + humanize_byte(remain_per_day, false) + " /天"
+  let remain = Number(total) - Number(used)
+  let remain_str = "剩余: " + humanize_byte(remain, 1) + " | " + remain/Number(reset) + ' 每天'
   if (!total) {
     $done({
       style: "error",
@@ -68,8 +69,8 @@ $httpClient.get({
     });
   } else {
     $done({
-      title: "用量: "+ humanize_byte(used, false) + " | " + humanize_byte(total, true) + "   "+nowtime(),
-      content: remain_str + "\n" + "重置: " + reset + " 天后" ,
+      title: "用量: "+ humanize_byte(used, 2) + " | " + humanize_byte(total, 0) + "   "+nowtime(),
+      content: remain_str + "\n重置: 剩余 " + reset + " 天 \n" + expired_at,
       icon: 'externaldrive.connected.to.line.below',
 		  'icon-color':'#9a7ff7'
     });
