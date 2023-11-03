@@ -1,3 +1,6 @@
+#!name=YTNoProxy 
+#!desc=YouTube No Proxy
+
 [Rule]
 AND,((SUBNET,SSID:Meituan), (DOMAIN-SUFFIX,googlevideo.com)),DIRECT
 
