@@ -1,0 +1,8 @@
+[Rule]
+AND,((SUBNET,SSID:Meituan), (DOMAIN-SUFFIX,googlevideo.com)),DIRECT
+
+[Host]
+*.googlevideo.com = script:MTYouTube
+
+[Script]
+MTYouTube = type=dns,debug=1,script-path=https://raw.githubusercontent.com/yxjxx/Maintaining-Scripts/master/js/mt.js,script-update-interval=0
