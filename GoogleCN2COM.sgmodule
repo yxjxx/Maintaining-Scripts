@@ -1,0 +1,8 @@
+#!name=GoogleCN2COM
+#!desc=Google 搜索从 google.cn 自动跳转到 google.com
+
+[URL Rewrite]
+^https?:\/\/(www\.)?google\.cn(\/.*)?$ https://www.google.com$2 302
+
+[MITM]
+hostname = %APPEND% google.cn, *.google.cn
